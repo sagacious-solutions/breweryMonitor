@@ -1,0 +1,9 @@
+{
+    "host":"www.dbhost.com",
+    "user":"admin",
+    "password":"hopsOrDeath",
+    "port" : 666,
+    "database" : "defaultdb",
+    "ssl_ca" : "./dbCert.crt",
+    "ssl_verify_cert" : true
+}
