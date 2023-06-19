@@ -1,0 +1,32 @@
+{
+    "sensors" : {
+        "fermentor_1": "0214630eb5ff"
+    },
+    "record_temps" :[
+        {
+            "processId" : 1,
+            "sensorId" : "0214630eb5ff",
+            "_comment" :"Monitor for fermentor_1",
+            "updateIntrvlSecs" : 300
+        },
+        {
+            "processId" : 2,
+            "sensorId" : "04146456a3ff",
+            "_comment" :"Monitor for ambient",
+            "updateIntrvlSecs" : 300
+        }
+    ],
+    "control_temps":[
+        {
+            "processId":3,
+            "sensorId": "041464652fff",
+            "targetTemp": -4,
+            "tempDifference": 1,
+            "delayStartMins": 0.1,
+            "checkIntervalSecs" : 60,
+            "cool":true,
+            "heat" : false,
+            "coolingPins":[]        
+        }
+    ]
+}
