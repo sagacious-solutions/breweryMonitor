@@ -39,8 +39,8 @@ def startTemperatureControllers():
     return processes
 
 def main():
-    # allProcesses = startTemperatureLogging()
-    allProcesses = startTemperatureControllers()
+    allProcesses = startTemperatureLogging()
+    # allProcesses = startTemperatureControllers()
 
     try :
         while True :
