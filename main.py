@@ -2,7 +2,7 @@ from tempMonitoring import dbLoggingLoop
 from tempController import temperatureControlLoop
 import time
 import json
-from multiprocessing import Process, Manager, Value
+from multiprocessing import Process
 
 CONFIG_JSON_PATH = './config.json'
 
@@ -40,7 +40,7 @@ def startTemperatureControllers():
 
 def main():
     allProcesses = startTemperatureLogging()
-    # allProcesses = startTemperatureControllers()
+    allProcesses = startTemperatureControllers()
 
     try :
         while True :

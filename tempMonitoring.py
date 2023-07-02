@@ -26,7 +26,7 @@ def updateDbForId(db, sensorId :str, processId:int) :
     print(curs.rowcount, "record inserted.")
 
 
-def dbLoggingLoop(sensorId, processId, updateIntrvlSecs):
+def dbLoggingLoop(sensorId, processId, updateIntrvlSecs, **kwargs):
     db = Database()
     while True:
         updateDbForId(db,sensorId, processId)

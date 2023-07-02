@@ -14,19 +14,41 @@
             "sensorId" : "04146456a3ff",
             "_comment" :"Monitor for ambient",
             "updateIntrvlSecs" : 300
+        },
+        {
+            "processId" : 3,
+            "sensorId" : "041464652fff",
+            "_comment" :"Glycol Bath",
+            "updateIntrvlSecs" : 300
         }
     ],
     "control_temps":[
         {
             "processId":3,
             "sensorId": "041464652fff",
-            "targetTemp": -4,
-            "tempDifference": 1,
-            "delayStartMins": 0.1,
+            "targetTemp": 10,
+            "tempDifference": 3,
+            "delayStartMins": 5,
             "checkIntervalSecs" : 60,
             "cool":true,
             "heat" : false,
-            "coolingPins":[]        
+            "coolingPins":[
+                {"pin": 22, "triggerLow":false, "defaultState": false },
+                {"pin": 23, "triggerLow":false, "defaultState": false }
+            ]      
+        },
+        {
+            "processId":4,
+            "sensorId": "0214630eb5ff",
+            "targetTemp": 18.9,
+            "tempDifference": 0.1,
+            "delayStartMins": 0.5,
+            "checkIntervalSecs" : 60,
+            "cool":true,
+            "heat" : false,
+            "coolingPins":[
+                {"pin": 24, "triggerLow":false, "defaultState": false }
+            ]      
         }
     ]
 }
