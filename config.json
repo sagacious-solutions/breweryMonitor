@@ -26,21 +26,21 @@
         {
             "processId":3,
             "sensorId": "041464652fff",
-            "targetTemp": 10,
-            "tempDifference": 3,
+            "targetTemp": -4,
+            "tempDifference": 2,
             "delayStartMins": 5,
             "checkIntervalSecs" : 60,
             "cool":true,
             "heat" : false,
             "coolingPins":[
-                {"pin": 22, "triggerLow":false, "defaultState": false },
-                {"pin": 23, "triggerLow":false, "defaultState": false }
+                {"pin": 5, "triggerLow":false, "defaultState": false },
+                {"pin": 17, "triggerLow":false, "defaultState": false }
             ]      
         },
         {
             "processId":4,
             "sensorId": "0214630eb5ff",
-            "targetTemp": 18.9,
+            "targetTemp": 4,
             "tempDifference": 0.1,
             "delayStartMins": 0.5,
             "checkIntervalSecs" : 60,

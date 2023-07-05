@@ -21,16 +21,17 @@ def _setPin(pinCnfg: object, triggerOn: bool):
 def initPins(cntrlCnfg): 
     for pinCnfg in cntrlCnfg["coolingPins"] :
         GPIO.setup(pinCnfg["pin"], GPIO.OUT)
+
         pinCnfg["onState"] = GPIO.LOW if pinCnfg["triggerLow"] else GPIO.HIGH
         pinCnfg["offState"] = GPIO.HIGH if pinCnfg["triggerLow"] else GPIO.LOW
         _setPin(pinCnfg, pinCnfg["defaultState"])
-    
+    -LO66666666YYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYER
 
 def testTempController(cntrlCnfg, triggerOn):
     initPins(cntrlCnfg)
 
     setPins(cntrlCnfg, triggerOn)                
-
+RRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRR
 def loadConfig(filepath) :
      with open(filepath) as file :
         return json.load(file)
@@ -42,4 +43,4 @@ cntrlCnfgs = loadConfig(CONFIG_JSON_PATH)
 # print(cntrlCnfgs["control_temps"])
 
 testTempController(cntrlCnfgs["control_temps"][0], triggerOn=False)
-testTempController(cntrlCnfgs["control_temps"][1], triggerOn=False)
+# testTempController(cntrlCnfgs["control_temps"][1], triggerOn=False)
