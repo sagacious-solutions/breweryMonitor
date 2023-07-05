@@ -3,9 +3,13 @@ from tempController import temperatureControlLoop
 import time
 import json
 from multiprocessing import Process
+from logger import Logger
+from setGpioPermissions import setPermissions
 
 CONFIG_JSON_PATH = './config.json'
 
+mainLog = Logger('main')
+mainLog.initLogFile()
 
 def loadConfig(filepath) :
      with open(filepath) as file :
@@ -20,6 +24,7 @@ def startTemperatureLogging():
     processes = []
 
     for recConf in config["record_temps"] :
+        mainLog.log.info(f'Starting temperature monitoring loop.\n{recConf}')
         loggingProcess = Process(target=dbLoggingLoop, kwargs=recConf)
         loggingProcess.start()
         processes.append(loggingProcess)
@@ -31,6 +36,7 @@ def startTemperatureControllers():
     processes = []
 
     for controlConfig in config["control_temps"] :
+        mainLog.log.info(f'Starting temperature control loop.\n{controlConfig}')
         ctrlProcess = Process(target=temperatureControlLoop, args=[controlConfig])
         ctrlProcess.start()
         processes.append(ctrlProcess)
@@ -39,6 +45,7 @@ def startTemperatureControllers():
     return processes
 
 def main():
+    setPermissions()
     allProcesses = startTemperatureLogging()
     allProcesses = startTemperatureControllers()
 
@@ -52,4 +59,5 @@ def main():
 
 
 if __name__ == "__main__" :
+    mainLog.log.info('Program Starting.')
     main()
